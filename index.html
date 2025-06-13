@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top 10 Stationery Shops in Pune</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 60px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 15px;
+            margin-top: 20px;
+        }
+
+        .header h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .shop-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 40px;
+            margin-top: 40px;
+        }
+
+        .shop-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .shop-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .shop-image-container {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .shop-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .shop-rank {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: #000;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            z-index: 2;
+        }
+
+        .photo-credit {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 30px 20px 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .shop-content {
+            padding: 25px;
+        }
+
+        .shop-header {
+            margin-bottom: 20px;
+        }
+
+        .shop-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .shop-location {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            font-weight: 500;
+        }
+
+        .rating-contact-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            padding: 15px 0;
+            border-top: 1px solid #ecf0f1;
+            border-bottom: 1px solid #ecf0f1;
+        }
+
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stars {
+            color: #f39c12;
+            font-size: 1rem;
+        }
+
+        .rating-text {
+            color: #7f8c8d;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .contact-number {
+            background: #00b894;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .shop-description {
+            color: #2c3e50;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        .see-on-map {
+            margin-top: 15px;
+            color: #00b894;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            text-decoration: none;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+
+        .see-on-map:hover {
+            color: #00a085;
+        }
+
+        @media (max-width: 768px) {
+            .shop-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .header h1 {
+                font-size: 2.2rem;
+            }
+            
+            .header p {
+                font-size: 1.1rem;
+            }
+            
+            .container {
+                padding: 15px;
+            }
+            
+            .rating-contact-section {
+                flex-direction: column;
+                gap: 12px;
+                align-items: stretch;
+            }
+            
+            .contact-number {
+                text-align: center;
+            }
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            background: #2c3e50;
+            color: white;
+            border-radius: 12px;
+        }
+
+        .footer p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Top 10 Stationery Shops in Pune</h1>
+            <p>Your Ultimate Guide to the Best Stationery Destinations in the City</p>
+        </div>
+
+        <div class="shop-grid" id="shopGrid">
+            <!-- Shops will be dynamically loaded here -->
+        </div>
+
+        <div class="footer">
+            <p>© 2025 Pune Stationery Guide | Curated with ❤️ for stationery lovers</p>
+        </div>
+    </div>
+
+    <script>
+        // Shop data
+        const shops = [
+            {
+                rank: 1,
+                name: "Venus Traders",
+                location: "Deccan Gymkhana, Pune",
+                description: "Venus Traders on FC Road, near Smart Inn, is a one-stop stationery destination for every stationery lover in the city. The two-storey store has everything one can imagine in terms of stationery. From writing instruments to art supplies, office essentials to school materials, this place has it all at competitive prices.",
+                phone: "+912041006423",
+                image: "images/venus-traders.jpg",
+                rating: 4.5,
+                photographer: "Amrita Khanna/LBB"
+            },
+            {
+                rank: 2,
+                name: "ABC Stationery",
+                location: "Camp Area, Pune",
+                description: "A premium stationery store offering high-quality writing instruments, notebooks, and office supplies. Known for their excellent customer service and wide range of imported stationery items. They stock everything from basic school supplies to luxury fountain pens and professional office equipment.",
+                phone: "+912234567890",
+                image: "images/abc-stationery.jpg",
+                rating: 4.3,
+                photographer: "Staff Writer/Guide"
+            },
+            {
+                rank: 3,
+                name: "Paper World",
+                location: "Koregaon Park, Pune",
+                description: "Specializing in notebooks, journals, and creative paper products. They offer custom printing services and have a great collection of eco-friendly stationery options. Perfect for students, professionals, and anyone who loves quality paper products.",
+                phone: "+912345678901",
+                image: "images/paper-world.jpg",
+                rating: 4.2,
+                photographer: "Staff Writer/Guide"
+            },
+            {
+                rank: 4,
+                name: "Pen Corner",
+                location: "JM Road, Pune",
+                description: "The go-to place for pen enthusiasts. They stock everything from basic ballpens to luxury fountain pens from renowned brands like Parker, Waterman, and Cross. Their knowledgeable staff can help you find the perfect writing instrument for any occasion.",
+                phone: "+912456789012",
+                image: "images/pen-corner.jpg",
+                rating: 4.4,
+                photographer: "Staff Writer/Guide"
+            },
+            {
+                rank: 5,
+                name: "Study Mart",
+                location: "Kothrud, Pune",
+                description: "Student-friendly stationery store with competitive prices. They offer bulk discounts and have a comprehensive collection of academic and professional supplies. Popular among college students and professionals for their affordable pricing and quality products.",
+                phone: "+912567890123",
+                image: "images/study-mart.jpg",
+                rating: 4.1,
+                photographer: "Staff Writer/Guide"
+            },
+            {
+                rank: 6,
+                name: "Creative Station",
+                location: "Baner, Pune",
+                description: "Art and craft specialty store with a wide range of creative supplies. Perfect for artists, students, and DIY enthusiasts looking for quality materials. They stock paints, brushes, canvases, and unique craft supplies that are hard to find elsewhere.",
+                phone: "+912678901234",
+                image: "images/creative-station.jpg",
+                rating: 4.3,
+                photographer: "Staff Writer/Guide"
+            },
+            {
+                rank: 7,
+                name: "Office Plus",
+                location: "Hinjewadi, Pune",
+                description: "Corporate-focused stationery supplier offering bulk orders and office essentials. They provide delivery services and maintain corporate accounts. Ideal for businesses looking for reliable stationery suppliers with professional service and competitive pricing.",
+                phone: "+912789012345",
+                image: "images/office-plus.jpg",
+                rating: 4.0,
+                photographer: "Staff Writer/Guide"
+            },
+            {
+                rank: 8,
+                name: "Smart Stationery",
+                location: "Wakad, Pune",
+                description: "Modern stationery store with the latest trends in writing instruments and office accessories. They also offer digital printing and lamination services. Known for their tech-savvy approach and contemporary product selection.",
+                phone: "+912890123456",
+                image: "images/smart-stationery.jpg",
+                rating: 4.2,
+                photographer: "Staff Writer/Guide"
+            },
+            {
+                rank: 9,
+                name: "Book & Pen House",
+                location: "Pimpri Chinchwad, Pune",
+                description: "Combination bookstore and stationery shop offering textbooks, novels, and complete stationery solutions under one roof. Popular among students and book lovers for their extensive collection and knowledgeable staff recommendations.",
+                phone: "+912901234567",
+                image: "images/book-pen-house.jpg",
+                rating: 3.9,
+                photographer: "Staff Writer/Guide"
+            },
+            {
+                rank: 10,
+                name: "Stationery World",
+                location: "Hadapsar, Pune",
+                description: "Large format stationery store with competitive pricing and a vast inventory. They offer home delivery and have tie-ups with local schools and colleges. Known for their extensive product range and excellent customer service across all age groups.",
+                phone: "+913012345678",
+                image: "images/stationery-world.jpg",
+                rating: 4.1,
+                photographer: "Staff Writer/Guide"
+            }
+        ];
+
+        function createStars(rating) {
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 !== 0;
+            let stars = '';
+            
+            for (let i = 0; i < fullStars; i++) {
+                stars += '★';
+            }
+            if (hasHalfStar) {
+                stars += '☆';
+            }
+            
+            return stars;
+        }
+
+        function loadShops() {
+            const shopGrid = document.getElementById('shopGrid');
+            
+            shops.forEach(shop => {
+                const shopCard = document.createElement('div');
+                shopCard.className = 'shop-card';
+                shopCard.innerHTML = `
+                    <div class="shop-image-container">
+                        <div class="shop-rank">${shop.rank}</div>
+                        <img src="${shop.image}" alt="${shop.name}" class="shop-image" onerror="this.src='https://via.placeholder.com/400x280/667eea/ffffff?text=Stationery+Shop'">
+                        <div class="photo-credit">Photo: ${shop.photographer}</div>
+                    </div>
+                    <div class="shop-content">
+                        <div class="shop-header">
+                            <h3 class="shop-name">${shop.name}</h3>
+                            <p class="shop-location">${shop.location}</p>
+                        </div>
+                        <div class="rating-contact-section">
+                            <div class="rating">
+                                <span class="stars">${createStars(shop.rating)}</span>
+                                <span class="rating-text">${shop.rating}/5</span>
+                            </div>
+                            <div class="contact-number">${shop.phone}</div>
+                        </div>
+                        <p class="shop-description">${shop.description}</p>
+                        <a href="#" class="see-on-map">SEE ON MAP</a>
+                    </div>
+                `;
+                shopGrid.appendChild(shopCard);
+            });
+        }
+
+        // Load shops when page loads
+        document.addEventListener('DOMContentLoaded', loadShops);
+    </script>
+</body>
+</html>
